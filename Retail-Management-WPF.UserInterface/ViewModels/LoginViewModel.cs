@@ -12,7 +12,10 @@ namespace Retail_Management_WPF.UserInterface.ViewModels
     {
 		private string _userName;
         private string _password;
-		private IAPIHelper _apiHelper;
+        private bool _isErrorVisible;
+        private string _errorMessage;
+
+        private IAPIHelper _apiHelper;
 
         public LoginViewModel(IAPIHelper apiHelper)
 		{
@@ -41,16 +44,31 @@ namespace Retail_Management_WPF.UserInterface.ViewModels
             }
         }
 
-		//public bool CanLogIn()
-		//{
-		//	bool output = false;
-		//	if (UserName?.Length > 0 && Password?.Length > 0)
-		//	{
-		//		output = true;
-		//	}
+		public bool IsErrorVisible
+        {
+			get 
+			{
+				bool output = false;
+				if (ErrorMessage?.Length > 0)
+				{
+                    output = true;
+                }
+				return output;
+            }
+		}
 
-		//	return output;
-		//}
+		public string ErrorMessage
+        {
+			get { return _errorMessage; }
+			set 
+			{
+                _errorMessage = value;
+                NotifyOfPropertyChange(() => IsErrorVisible);
+				NotifyOfPropertyChange(() => ErrorMessage);
+			}
+
+		}
+
 
 		public bool CanLogIn
 		{
@@ -60,8 +78,8 @@ namespace Retail_Management_WPF.UserInterface.ViewModels
 				if (UserName?.Length > 0 && Password?.Length > 0)
 				{
 					output = true;
-				}
-				return output;
+                }
+                return output;
 			}
 		}
 
@@ -69,12 +87,13 @@ namespace Retail_Management_WPF.UserInterface.ViewModels
 		{
 			try
 			{
+				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
 
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
+				ErrorMessage = ex.Message;
             }        
 		}
 
