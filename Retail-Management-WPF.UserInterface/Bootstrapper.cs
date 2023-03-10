@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using Retail_Management_WPF.UserInterface.Helpers;
+using Retail_Management_WPF.UserInterface.Library.Api;
+using Retail_Management_WPF.UserInterface.Library.Models;
 using Retail_Management_WPF.UserInterface.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,7 @@ namespace Retail_Management_WPF.UserInterface
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
 
 

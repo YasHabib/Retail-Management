@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Retail_Management_WPF.UserInterface.Helpers;
+using Retail_Management_WPF.UserInterface.Library.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,6 +90,9 @@ namespace Retail_Management_WPF.UserInterface.ViewModels
 			{
 				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
+
+				//capture login information about the user
+				await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
 
 			}
 			catch (Exception ex)

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retail-Management-WPF.UserI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retail-Management.Api.Library", "Retail-Management.Api.Library\Retail-Management.Api.Library.csproj", "{7BD6F946-A9D4-4E1D-A880-D1409FCE18D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retail-Management-WPF.UserInterface.Library", "Retail-Management-WPF.UserInterface.Library\Retail-Management-WPF.UserInterface.Library.csproj", "{30C2E976-7E52-45FE-B627-F55C00469FF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{7BD6F946-A9D4-4E1D-A880-D1409FCE18D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BD6F946-A9D4-4E1D-A880-D1409FCE18D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BD6F946-A9D4-4E1D-A880-D1409FCE18D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C2E976-7E52-45FE-B627-F55C00469FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C2E976-7E52-45FE-B627-F55C00469FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C2E976-7E52-45FE-B627-F55C00469FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C2E976-7E52-45FE-B627-F55C00469FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
